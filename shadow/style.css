@@ -15,32 +15,6 @@ body {
   padding: 50px;
 }
 
-textarea {
-  min-width: 60%;
-  min-height: 10vh;
-  background: #212121;
-  color: #eee;
-  padding: 15px;
-  font-size: 1.5em;
-  border-radius: 5px;
-  margin-top: 50px;
-  position: relative;
-  margin-left: 55px;
-}
-
-textarea::before {
-  content: 'Copied!';
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 10px 20px;
-  background: #ac4848;
-  color: #eee;
-  width: 100px;
-  height: 100px;
-  z-index: 100;
-}
-
 .container {
   display: flex;
   flex-direction: column;
@@ -61,7 +35,7 @@ textarea::before {
 .preview {
   width: 50%;
   height: 35%;
-  background: orchid;
+  background: #ffffff;
   border-radius: 15px;
 }
 
@@ -130,6 +104,32 @@ label {
   outline: none;
   border-radius: 5px;
   color: #fff;
+}
+
+textarea {
+  min-width: 60%;
+  min-height: 10vh;
+  background: #212121;
+  color: #eee;
+  padding: 15px;
+  font-size: 1.5em;
+  border-radius: 5px;
+  margin-top: 50px;
+  position: relative;
+  margin-left: 55px;
+}
+
+textarea::before {
+  content: 'Copied!';
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 20px;
+  background: #ac4848;
+  color: #eee;
+  width: 100px;
+  height: 100px;
+  z-index: 100;
 }
 
 @media only screen and (max-width: 760px) {
