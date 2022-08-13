@@ -43,10 +43,10 @@ insetBtn.addEventListener('click', e => {
 function apply() {
   if (insetValue) {
     preview.style.boxShadow = `${value1.value}px ${value2.value}px  ${value3.value}px ${value4.value}px ${color.value} inset`
-    textArea.innerHTML = `box-shadow:  ${value1.value}px ${value2.value}px  ${value3.value}px ${value4.value}px ${color.value} inset`
+    textArea.innerHTML = `box-shadow: ${value1.value}px ${value2.value}px ${value3.value}px ${value4.value}px ${color.value} inset`
   } else {
     preview.style.boxShadow = `${value1.value}px ${value2.value}px  ${value3.value}px ${value4.value}px ${color.value}`
-    textArea.innerHTML = `box-shadow:  ${value1.value}px ${value2.value}px  ${value3.value}px ${value4.value}px ${color.value}`
+    textArea.innerHTML = `box-shadow: ${value1.value}px ${value2.value}px ${value3.value}px ${value4.value}px ${color.value}`
   }
 }
 
