@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  overflow-x: hidden;
+  padding: 50px;
+}
+
+textarea {
+  min-width: 60%;
+  min-height: 10vh;
+  background: #212121;
+  color: #eee;
+  padding: 15px;
+  font-size: 1.5em;
+  border-radius: 5px;
+  margin-top: 50px;
+  position: relative;
+  margin-left: 55px;
+}
+
+textarea::before {
+  content: 'Copied!';
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 20px;
+  background: #ac4848;
+  color: #eee;
+  width: 100px;
+  height: 100px;
+  z-index: 100;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+  height: 50%;
+}
+
+.preview-wrapper {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview {
+  width: 50%;
+  height: 35%;
+  background: orchid;
+  border-radius: 15px;
+}
+
+.slider {
+  width: 500px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slider input {
+  appearance: none;
+  width: 75%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  padding: 2px 5px;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  margin-right: 10px;
+}
+.slider input::-webkit-slider-thumb {
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  background: cornflowerblue;
+}
+.slider input::-moz-range-thumb {
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  background: cornflowerblue;
+}
+
+.slider input[type='color'] {
+  display: inline;
+  padding: 10px;
+  width: 75%;
+  height: 52px;
+  margin-right: 10px;
+}
+
+label {
+  width: 25%;
+  background-color: cornflowerblue;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  font-size: 1.5em;
+  padding: 10px;
+}
+
+#insetBtn {
+  padding: 10px 30px;
+  background: cornflowerblue;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  border-radius: 5px;
+  color: #fff;
+}
+
+@media only screen and (max-width: 760px) {
+  body {
+    padding: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  textarea {
+    min-width: 95%;
+    min-height: 10vh;
+    margin: 40px;
+  }
+
+  .preview-wrapper {
+    width: 100%;
+    height: 50vh;
+  }
+
+  .preview {
+    margin: 0;
+    margin-top: -20%;
+    width: 50%;
+    height: 30%;
+  }
+  .container {
+    flex-direction: column;
+    justify-content: end;
+    width: 100%;
+    height: 50vh;
+  }
+
+  .app {
+    width: 90%;
+  }
+
+  .slider {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+}
