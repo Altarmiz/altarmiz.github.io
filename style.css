@@ -1,49 +1,90 @@
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 :root {
-  --primary-color: #000;
-  --bg: #eee;
-  --btn-font-color: #555;
+  /* colors */
+  --color-0: #000;
+  --color-1: #6c5ce7;
+  --color-2: #e17055;
+  --color-3: #00b894;
+  --color-4: #e84393;
+  --color-5: #eee;
+
+  /* basics */
+  --primary-color: var(--color-0);
+  --secondary-color: #fff;
+  --span-bg: var(--color-5);
+
+  /* text */
+  --font-color: var(--primary-color);
+  --font-family: 'Courier New', Courier, monospace;
 }
 
 body {
   width: 100%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #fff;
-  font-family: monospace;
+  background: var(--secondary-color);
+  font-family: var(--font-family);
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 50px 0;
 }
 
+input,
+textarea,
+button {
+  font-family: inherit;
+}
+
+h1,
+h4 {
+  color: #777;
+  text-align: center;
+}
+h4 {
+  margin-top: 10px;
+  margin-bottom: 70px;
+  color: #7777779f;
+}
+
+/* Button Styles */
 .btn {
   position: relative;
-  border: none;
-  outline: none;
-  color: var(--btn-font-color);
+  display: flex;
+  color: var(--font-color);
   cursor: pointer;
   padding: 30px 60px;
-  display: flex;
   overflow: hidden;
+  border: none;
+  outline: none;
   border-radius: 50px;
-  transition: box-shadow 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1.5em;
+  font-weight: 300;
+  text-transform: uppercase;
+  user-select: none;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
 }
 
 .btn {
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
-.btn .btn-text {
+.btn:hover {
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.3);
+  color: var(--secondary-color);
+  background: var(--primary-color);
+}
+
+/* We need to put heigher index value on text 'p' element */
+.btn-text {
   z-index: 5;
-  font-size: 150%;
-  transition: 0.4s ease-in-out;
 }
 
 .animated-bg {
@@ -57,42 +98,55 @@ body {
   flex-wrap: wrap;
 }
 
-.btn .animated-bg span {
+/* now its time to style all the spans and animate thier behavior */
+.animated-bg span {
   top: 0;
   left: 0;
-  background: var(--bg);
+  background: var(--span-bg);
   transition: 0.7s ease-in-out;
 }
 
-.animated-bg.style-1 span {
+/* We will create three sizes with different width and height*/
+/* "the more the width & height, the lesser the amount"
+    - the wise one
+*/
+
+.animated-bg.size-1 span {
   width: 10%;
   height: 25%;
 }
-.animated-bg.style-2 span {
+.animated-bg.size-2 span {
   width: 20%;
   height: 50%;
 }
-.animated-bg.style-3 span {
+.animated-bg.size-3 span {
   width: 25%;
   height: 100%;
 }
 
-.btn span:nth-child(2n) {
-  transition: 0.3s;
-  transition-delay: 0.1s;
+/* Here comes the real deal! */
+/* rotate, translate or skew it - do what ever you want with transform property and see whats happends*/
+.btn:hover.effect-1 span {
+  background: var(--primary-color);
+  transform: rotateY(180deg) rotateX(180deg) translateX(-150px);
 }
-.btn span:nth-child(3n) {
-  transition: 0.2s;
+.btn:hover.effect-2 span {
+  background: var(--primary-color);
+  transform: rotateY(180deg) rotateX(180deg) skewX(-90px);
+}
+.btn:hover.effect-3 span {
+  background: var(--primary-color);
+  transform: rotateY(180deg) rotateX(180deg);
+}
+
+/* for every 2nd element, lets give some delay in transition */
+.animated-bg span:nth-child(2n) {
+  transition: 0.3s;
   transition-delay: 0.2s;
 }
 
-.btn:hover {
-  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.521);
-  color: var(--bg);
-  background: var(--primary-color);
-}
-
-.btn:hover span {
-  background: var(--primary-color);
-  transform: rotateY(180deg) rotateX(180deg);
+/* now for every 3rd span */
+.animated-bg span:nth-child(3n) {
+  transition: 0.35s;
+  transition-delay: 0.3s;
 }
